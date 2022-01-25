@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+@import "./function";
+
+.colors {
+  height: 80vh;
+  overflow: hidden;
+  @include flex(flex-start, stretch, row);
+  .color {
+    position: relative;
+    @include flex(space-evenly, center, column);
+    flex-grow: 1;
+    .color-controls {
+      margin-bottom: 100px;
+      @include flex(space-between, center, column);
+      button {
+        font-size: 2.6rem;
+        background: none;
+        border: none;
+      }
+      .adjust {
+        margin-bottom: 3rem;
+      }
+    }
+    .sliders {
+      @include flex(flex-start, flex-start, column);
+      border-top-right-radius: 1.6rem;
+      position: absolute;
+      //hide
+      bottom: -100px;
+      opacity: 0;
+      padding: 1.3rem;
+      background-color: rgb(140, 180, 206);
+      font-size: 1.6rem;
+      .close-adjustment {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.3rem 0.7rem;
+        border-top-right-radius: 1.6rem;
+        border-bottom-left-radius: 0.4rem;
+        border: none;
+      }
+      input {
+        margin-bottom: 1.6rem;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.copy-section {
+//   display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: red;
+    padding: 1.6rem 2rem;
+    font-size: 1.4rem;
+    border-radius: 1.6rem;
+    span{
+        @include flex(center, flex-start, row);
+    }
+}
+
+.panel {
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+  @include flex(space-around, center, row);
+  div {
+      font-size: 1.6rem;
+      button {
+      padding: 1.2rem 2.2rem;
+      background-color: rgb(46, 46, 46);
+      border-radius: 1.2rem;
+      color: #fff;
+      border: none;
+      font-size: 1.8rem;
+    }
+    p{
+        text-align: center;
+        margin-top: 1.6rem;
+    }
+  }
+}
